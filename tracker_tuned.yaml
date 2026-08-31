@@ -1,0 +1,18 @@
+# Tuned for FlowMind Live's use case: a fixed traffic camera where
+# vehicles regularly occlude each other and where a compressed/pixelated
+# RTSP stream causes intermittent low-confidence or missed detections
+# frame-to-frame. Defaults (bytetrack.yaml) are tuned for general-purpose
+# tracking; this variant trades a slightly higher chance of ID switches
+# for a much lower chance of losing a real vehicle's track entirely —
+# which matters here because a lost track means a car silently drops out
+# of the live queue count feeding the traffic-light decision.
+#
+# Docs: https://docs.ultralytics.com/modes/track
+
+tracker_type: bytetrack
+track_high_thresh: 0.2      # was 0.25 — keep more borderline detections in first-stage matching
+track_low_thresh: 0.05      # was 0.1  — recover more low-confidence boxes (helps on a pixelated feed)
+new_track_thresh: 0.2       # was 0.25 — start tracking partially-occluded/blurry vehicles sooner
+track_buffer: 60            # was 30   — keep a track "alive" through ~2x longer occlusion/misses
+match_thresh: 0.75          # was 0.8  — slightly looser IoU match, tolerates motion blur between frames
+fuse_score: True

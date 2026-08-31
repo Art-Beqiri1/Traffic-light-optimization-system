@@ -1,0 +1,45 @@
+{
+  "rtsp_url": "",
+  "confidence": 0.35,
+  "line_position": 0.55,
+  "grid_rows": 2,
+  "grid_cols": 2,
+  "dqn_episodes": 120,
+  "model_name": "yolov8n.pt",
+  "imgsz": 640,
+  "rtsp_transport": "tcp",
+  "enhance": true,
+  "control": {
+    "mode": "fixed",
+    "fixed_ns_seconds": 25,
+    "fixed_ew_seconds": 25,
+    "yellow_seconds": 3,
+    "all_red_seconds": 2
+  },
+  "cameras": [
+    {
+      "id": "N",
+      "approach": "N",
+      "rtsp_url": "",
+      "enabled": true
+    },
+    {
+      "id": "S",
+      "approach": "S",
+      "rtsp_url": "",
+      "enabled": true
+    },
+    {
+      "id": "E",
+      "approach": "E",
+      "rtsp_url": "",
+      "enabled": true
+    },
+    {
+      "id": "W",
+      "approach": "W",
+      "rtsp_url": "",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+matplotlib>=3.5
+numpy>=1.22
+torch>=2.0
+flask>=2.3
+opencv-python>=4.8
+ultralytics>=8.1
+lap>=0.5.12
+# aiortc/av: only needed for the WebRTC web dashboard (live_app.py). If
+# these fail to install/import on your machine (e.g. Windows Smart App
+# Control blocking PyAV's DLLs), that's fine — live_app.py detects this
+# and falls back to MJPEG automatically, and desktop_app.py doesn't need
+# them at all. Delete these two lines if pip install fails on them.
+aiohttp>=3.9
+aiortc>=1.6
+av>=11.0
+# PySide6: the native desktop app (desktop_app.py) — the recommended
+# low-latency, low-pixelation option if you're viewing on the same
+# machine/LAN as the camera.
+PySide6>=6.6
